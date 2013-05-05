@@ -64,7 +64,7 @@ public class WoodcuttingManager extends SkillManager {
         }
 
         applyXpGain(xp);
-        mcMMO.p.debug("[Award XP] " + getPlayer().getName() + " " + SkillType.WOODCUTTING + " BLOCK_BREAK " + blockState);
+        mcMMO.p.debug("[Award XP] " + getPlayer().getName() + " " + SkillType.WOODCUTTING + " BLOCK_BREAK " + blockState.getBlock().getType());
     }
 
     /**
@@ -171,7 +171,7 @@ public class WoodcuttingManager extends SkillManager {
                             Woodcutting.checkForDoubleDrop(blockState);
                         }
                         xp += Woodcutting.getExperienceFromLog(blockState, ExperienceGainMethod.TREE_FELLER);
-                        mcMMO.p.debug("[Award XP] " + getPlayer().getName() + " " + SkillType.WOODCUTTING + " TREE_FELLER " + blockState);
+                        mcMMO.p.debug("[Award XP] " + getPlayer().getName() + " " + SkillType.WOODCUTTING + " TREE_FELLER " + blockState.getBlock().getType());
                         Misc.dropItem(blockState.getLocation(), new ItemStack(Material.LOG, 1, tree.getSpecies().getData()));
                         break;
 

@@ -279,7 +279,7 @@ public class FishingManager extends SkillManager {
         }
 
         applyXpGain(Config.getInstance().getFishingBaseXP() + treasureXp);
-        mcMMO.p.debug("[Award XP] " + getPlayer().getName() + " " + SkillType.FISHING + " CATCH FISH ; TREASURE = " + treasure);
+        mcMMO.p.debug("[Award XP] " + getPlayer().getName() + " " + SkillType.FISHING + " CATCH FISH ; TREASURE = " + treasure.getDrop().getType());
     }
 
     /**
