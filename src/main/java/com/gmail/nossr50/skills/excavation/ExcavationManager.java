@@ -5,6 +5,7 @@ import java.util.List;
 import org.bukkit.Location;
 import org.bukkit.block.BlockState;
 
+import com.gmail.nossr50.mcMMO;
 import com.gmail.nossr50.datatypes.player.McMMOPlayer;
 import com.gmail.nossr50.datatypes.skills.SkillType;
 import com.gmail.nossr50.datatypes.treasure.ExcavationTreasure;
@@ -36,6 +37,7 @@ public class ExcavationManager extends SkillManager {
                 for (ExcavationTreasure treasure : treasures) {
                     if (skillLevel >= treasure.getDropLevel() && SkillUtils.treasureDropSuccessful(treasure.getDropChance(), activationChance)) {
                         xp += treasure.getXp();
+                        mcMMO.p.debug("[Award XP] " + getPlayer().getName() + " " + SkillType.EXCAVATION + " " + treasure + " " + blockState);
                         Misc.dropItem(location, treasure.getDrop());
                     }
                 }

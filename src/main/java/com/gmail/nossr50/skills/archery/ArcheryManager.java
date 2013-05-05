@@ -7,6 +7,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
+import com.gmail.nossr50.mcMMO;
 import com.gmail.nossr50.datatypes.player.McMMOPlayer;
 import com.gmail.nossr50.datatypes.skills.SkillType;
 import com.gmail.nossr50.locale.LocaleLoader;
@@ -54,6 +55,7 @@ public class ArcheryManager extends SkillManager {
         double squaredDistance = Math.min(shooterLocation.distanceSquared(targetLocation), 10000);
 
         applyXpGain((int) (squaredDistance * Archery.DISTANCE_XP_MULTIPLIER));
+        mcMMO.p.debug("[Award XP] " + player.getName() + " " + SkillType.ARCHERY + " distance: " + squaredDistance + target.getType());
     }
 
     /**
