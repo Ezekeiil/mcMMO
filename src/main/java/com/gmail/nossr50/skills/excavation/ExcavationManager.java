@@ -38,7 +38,7 @@ public class ExcavationManager extends SkillManager {
                 for (ExcavationTreasure treasure : treasures) {
                     if (skillLevel >= treasure.getDropLevel() && SkillUtils.treasureDropSuccessful(treasure.getDropChance(), activationChance)) {
                         xp += treasure.getXp();
-                        mcMMO.p.debug("[Award XP] " + getPlayer().getName() + " " + SkillType.EXCAVATION + " " + treasure.getDrop().getType() + " " + blockState.getBlock().getType());
+                        mcMMO.p.debug("[Award XP] " + getPlayer().getName() + " " + SkillType.EXCAVATION + " " + blockState.getBlock().getType() + " TREASURE = " + treasure.getDrop().getType());
                         Misc.dropItem(location, treasure.getDrop());
                     }
                 }
